@@ -72,8 +72,10 @@ dsh plugin --profile web add dsh-computer-ai-use
 | 同上 | Windows x64 CI（记事本，Node 24） | 通过 |
 | DSH 加载、工具注册、附件存储 | DSH 0.2.1-rc.3、0.1.5-rc.2，macOS | 通过 |
 | 真实模型 + 假驱动的完整工具循环：看图、点中目标、输入、按键，审批只问一次 | DSH 0.2.1-rc.3，Kimi K3.1 Pro，macOS | 通过 |
-| 真实模型 + 真实键鼠的完整任务 | | **尚未验证** |
+| 真实模型 + 真实键鼠的完整任务：在 TextEdit 里切到窗口、输入中英文、拖选、打开菜单、放大读字、关闭不保存、退出 | DSH 0.2.1-rc.3 web 模式（从 Terminal 启动），Kimi K3.1 Pro，macOS 27 | 通过，11 次工具调用 |
+| 审批弹窗：新会话询问一次，之后不再询问 | 同上 | 通过 |
 | 桌面版 DeepSeek Harness 内运行 | | **尚未验证** |
+| 真实模型在 Windows 上操作 | | **尚未验证** |
 
 ## 开发
 

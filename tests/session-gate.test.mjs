@@ -24,6 +24,8 @@ test('asks once per session and remembers the grant', async () => {
   assert.equal(requests.length, 1)
   assert.equal(requests[0].toolName, 'computer_screenshot')
   assert.equal(requests[0].callId, 'call-1')
+  // The host's button reads "allow once", so the prompt must say the grant lasts.
+  assert.match(requests[0].reason, /until it ends/)
   await gate({ ...exec, agent: { session: {} } }, 'computer_screenshot')
   assert.equal(requests.length, 2)
 })
