@@ -1,0 +1,14 @@
+{
+  "latestTested": "0.2.1-rc.5",
+  "acceptedRuntimeRange": ">=0.1.5-rc.1 <0.3.0-0",
+  "supported": [
+    "0.1.5-rc.2",
+    "0.2.1-rc.3",
+    "0.2.1-rc.5"
+  ],
+  "validation": {
+    "0.1.5-rc.2": "In the Homebrew CLI on macOS: the plugin loads and shows its settings page, with the toggle locked because this version writes settings through a section this plugin does not install. Updates were not run on this version.",
+    "0.2.1-rc.3": "With version 0.1.0, in a scratch web profile on macOS with a real model and real input: a full TextEdit task. The tools have not changed since.",
+    "0.2.1-rc.5": "The desktop app's own host entry against a scratch DSH_HOME on macOS, with the app's pnpm 11.28.5 and a local registry: the Plugins page install and enable with no restart, the settings page, Update now, the unattended update after boot, the toggle across restarts, uninstall and reinstall. Not checked inside the desktop app's window, and not on Windows beyond the update test against the same pnpm in CI."
+  }
+}

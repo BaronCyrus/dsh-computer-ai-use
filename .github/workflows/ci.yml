@@ -25,6 +25,7 @@ jobs:
           cache: pnpm
       - run: pnpm install --frozen-lockfile
       - run: pnpm test
+      - run: node scripts/install-check.mjs
 
   # Hosted Windows runners have a desktop session, so this drives Notepad with the
   # real mouse and keyboard. Hosted macOS runners cannot grant the screen and
