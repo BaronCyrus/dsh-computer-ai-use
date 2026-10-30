@@ -15,7 +15,7 @@ import { createRequire } from 'node:module'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 import { setTimeout as sleep } from 'node:timers/promises'
-import { createUiTarsDriver } from '../lib/ui-tars-driver.js'
+import { createUiTarsDriver, writeClipboard } from '../lib/ui-tars-driver.js'
 
 const isMac = process.platform === 'darwin'
 const withInput = process.argv.includes('--input')
@@ -86,7 +86,7 @@ async function runInputChecks(size) {
     return shot.data
   }
   const copied = async () => {
-    await nut.clipboard.setContent('__smoke_sentinel__')
+    await writeClipboard(nut, '__smoke_sentinel__')
     await driver.key(`${mod}+c`)
     await sleep(300)
     return nut.clipboard.getContent()
@@ -177,7 +177,7 @@ async function runInputChecks(size) {
 
     await inEditor('scroll moves long content', async () => {
       await driver.key(`${mod}+a`)
-      await nut.clipboard.setContent(Array.from({ length: 150 }, (_, line) => `line ${line + 1}`).join('\n'))
+      await writeClipboard(nut, Array.from({ length: 150 }, (_, line) => `line ${line + 1}`).join('\n'))
       await driver.key(`${mod}+v`)
       await sleep(800)
       await driver.key(isMac ? 'cmd+up' : 'ctrl+home')
@@ -208,7 +208,7 @@ async function runInputChecks(size) {
       if (editorIsRunning()) throw new Error('the editor is still running')
     })
     await driver.move({ x: Math.max(startPointer.x, 0), y: Math.max(startPointer.y, 0) }).catch(() => {})
-    if (startClipboard) await nut.clipboard.setContent(startClipboard).catch(() => {})
+    if (startClipboard) await writeClipboard(nut, startClipboard).catch(() => {})
   }
 }
 
