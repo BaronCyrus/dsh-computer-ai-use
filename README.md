@@ -63,16 +63,17 @@ dsh plugin --profile web add dsh-computer-ai-use
 
 ## 验证状态
 
-版本 0.1.0，DSH 0.2.1-rc.3（桌面版内置运行时，Node 24.21），macOS 27 arm64：
+版本 0.1.0：
 
-| 项目 | 结果 |
-| --- | --- |
-| 单元测试（假驱动） | 通过 |
-| 真实键鼠自检 `scripts/smoke.mjs --input`，操作 TextEdit | 通过：点击、双击、右键、拖选、滚动、移动、按键、中英文输入、截图 |
-| 真实 DSH 加载、工具注册、附件存储 | 通过，也在 DSH 0.1.5-rc.2 上验证过 |
-| 真实模型 + 假驱动的完整工具循环 | 见 CHANGELOG |
-| 真实模型 + 真实键鼠的完整任务 | 尚未验证 |
-| Windows | 见 CI 的 `windows-smoke` |
+| 项目 | 环境 | 结果 |
+| --- | --- | --- |
+| 单元测试（假驱动） | macOS、Windows CI | 通过 |
+| 真实键鼠自检 `scripts/smoke.mjs --input`：点击、双击、右键、拖选、滚动、移动、按键、中英文输入、截图 | macOS 27 arm64（TextEdit，DSH 内置 Node 24.21） | 通过 |
+| 同上 | Windows x64 CI（记事本，Node 24） | 通过 |
+| DSH 加载、工具注册、附件存储 | DSH 0.2.1-rc.3、0.1.5-rc.2，macOS | 通过 |
+| 真实模型 + 假驱动的完整工具循环：看图、点中目标、输入、按键，审批只问一次 | DSH 0.2.1-rc.3，Kimi K3.1 Pro，macOS | 通过 |
+| 真实模型 + 真实键鼠的完整任务 | | **尚未验证** |
+| 桌面版 DeepSeek Harness 内运行 | | **尚未验证** |
 
 ## 开发
 
