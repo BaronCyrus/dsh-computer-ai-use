@@ -1,0 +1,6 @@
+# Register the computer use tools. The UI-TARS operator and its native modules
+# load on the first tool call, so a missing or broken native binary cannot stop
+# DSH from booting.
+- insert:
+    - id: computer-ai-use
+      name: 'dsh-computer-ai-use'
